@@ -8,23 +8,77 @@ class HomeScreen extends StatelessWidget {
           child: Column(
         children: [
           Container(
+            height: MediaQuery.of(context).size.height * 0.25,
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(241, 192, 134, 1),
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(30),
+                )),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Text("Icon#1"),
-                    Text("Icon#2"),
-                  ],
+                SizedBox(
+                  height: 10,
                 ),
                 Row(
                   children: [
-                    Text("Image with Revolving Outline"),
+                    Container(
+                      margin: EdgeInsetsDirectional.all(20),
+                      child: Icon(
+                        Icons.menu,
+                        size: 30,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        width: double.infinity,
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsetsDirectional.all(20),
+                      child: Icon(
+                        Icons.search,
+                        size: 30,
+                      ),
+                    ),
+                  ],
+                ),
+                // Padding(
+                // padding:
+                //     const EdgeInsets.symmetric(horizontal: 0, vertical: 0.0),
+
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        Container(
+                            height: 70,
+                            width: 70,
+                            child: CircularProgressIndicator()),
+                        Container(
+                            height: 53,
+                            width: 53,
+                            child: Image.asset("assets/images/avatar.png"))
+                      ],
+                    ),
                     Column(children: [
-                      Text("My Name"),
+                      Text(
+                        "Chetan Goyal",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          color: Colors.blueGrey[900],
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      SizedBox(height: 7),
                       Text("App Developer"),
                     ])
                   ],
-                )
+                ),
+                // ),
               ],
             ),
           ),
