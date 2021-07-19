@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           MediaQuery.of(context).size.width * (ZoomDrawer.isRTL() ? .45 : 0.65),
       menuScreen: MenuScreen(),
       mainScreen: Scaffold(
+        backgroundColor: Color.fromRGBO(255, 248, 237, 1),
         body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
