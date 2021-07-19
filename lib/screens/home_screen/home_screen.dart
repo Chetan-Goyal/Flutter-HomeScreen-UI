@@ -3,6 +3,7 @@ import 'package:flutter_home_screen_ui/widgets/my_tasks_row.dart';
 import 'package:flutter_home_screen_ui/widgets/active_projects_card.dart';
 
 class HomeScreen extends StatelessWidget {
+  final activeProjectsKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,11 +133,17 @@ class HomeScreen extends StatelessWidget {
                     details: "5 tasks now, 1 started",
                     iconBackgroundColor: Color.fromRGBO(208, 110, 111, 1),
                   ),
-                  MyTasksRow(
-                    icon: Icons.alarm,
-                    heading: "In Progress",
-                    details: "1 tasks now, 1 started",
-                    iconBackgroundColor: Color.fromRGBO(240, 191, 135, 1),
+                  GestureDetector(
+                    onTap: () => Scrollable.ensureVisible(
+                      activeProjectsKey.currentContext as BuildContext,
+                      duration: Duration(seconds: 1),
+                    ),
+                    child: MyTasksRow(
+                      icon: Icons.alarm,
+                      heading: "In Progress",
+                      details: "1 tasks now, 1 started",
+                      iconBackgroundColor: Color.fromRGBO(240, 191, 135, 1),
+                    ),
                   ),
                   MyTasksRow(
                     icon: Icons.alarm,
@@ -149,6 +156,7 @@ class HomeScreen extends StatelessWidget {
                     margin: EdgeInsetsDirectional.all(20),
                     child: Text(
                       "Active Projects",
+                      key: activeProjectsKey,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 22.0,
