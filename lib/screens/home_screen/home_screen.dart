@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_home_screen_ui/widgets/my_tasks_row.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -68,13 +69,18 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         "Chetan Goyal",
                         style: TextStyle(
-                          fontSize: 22.0,
+                          fontSize: 25.0,
                           color: Colors.blueGrey[900],
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w900,
                         ),
                       ),
                       SizedBox(height: 7),
-                      Text("App Developer"),
+                      Text("App Developer",
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.blueGrey[900],
+                            fontWeight: FontWeight.w400,
+                          )),
                     ])
                   ],
                 ),
@@ -84,13 +90,55 @@ class HomeScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              Text("My Tasks"),
-              Text("Calender Icon"),
+              Container(
+                margin: EdgeInsetsDirectional.all(20),
+                child: Text(
+                  "My Tasks",
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    color: Colors.blueGrey[900],
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  width: double.infinity,
+                ),
+              ),
+              Container(
+                height: 45,
+                width: 45,
+                margin: EdgeInsetsDirectional.all(20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: Color.fromRGBO(74, 145, 151, 1)),
+                child: Icon(
+                  Icons.calendar_today,
+                  size: 20,
+                ),
+              ),
             ],
           ),
-          Text("Row#1"),
-          Text("Row#2"),
-          Text("Row#3"),
+          MyTasksRow(
+            icon: Icons.alarm,
+            heading: "To Do",
+            details: "5 tasks now, 1 started",
+            iconBackgroundColor: Color.fromRGBO(208, 110, 111, 1),
+          ),
+          MyTasksRow(
+            icon: Icons.alarm,
+            heading: "In Progress",
+            details: "1 tasks now, 1 started",
+            iconBackgroundColor: Color.fromRGBO(208, 110, 111, 1),
+          ),
+          MyTasksRow(
+            icon: Icons.alarm,
+            heading: "Done",
+            details: "18 tasks now, 13 started",
+            iconBackgroundColor: Color.fromRGBO(208, 110, 111, 1),
+          ),
           Text("Active Projects"),
           Row(children: [
             Text("Card#1"),
