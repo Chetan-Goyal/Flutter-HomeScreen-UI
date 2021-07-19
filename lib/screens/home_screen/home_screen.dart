@@ -131,13 +131,13 @@ class HomeScreen extends StatelessWidget {
             icon: Icons.alarm,
             heading: "In Progress",
             details: "1 tasks now, 1 started",
-            iconBackgroundColor: Color.fromRGBO(208, 110, 111, 1),
+            iconBackgroundColor: Color.fromRGBO(240, 191, 135, 1),
           ),
           MyTasksRow(
             icon: Icons.alarm,
             heading: "Done",
             details: "18 tasks now, 13 started",
-            iconBackgroundColor: Color.fromRGBO(208, 110, 111, 1),
+            iconBackgroundColor: Color.fromRGBO(106, 137, 226, 1),
           ),
           Text("Active Projects"),
           Row(children: [
